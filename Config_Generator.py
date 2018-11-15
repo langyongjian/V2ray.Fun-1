@@ -4,12 +4,10 @@ import json
 import urllib2
 import commands
 
-
 def getip():
-    myip = urllib2.urlopen('http://ipconfig.me').read()
+    myip = urllib2.urlopen('https://cn.fdos.me/ip.php').read()
     myip = myip.strip()
     return str(myip)
-
 
 def open_port(port):
     cmd =[ "iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport $1 -j ACCEPT",
